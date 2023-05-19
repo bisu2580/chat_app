@@ -1,6 +1,7 @@
-import React,{ useContext } from 'react';
+import React,{ useContext, useState } from 'react';
 import { auth } from '../firebase';
 import { signOut } from 'firebase/auth';
+import * as FaIcons from "react-icons/fa";
 import { AuthContext } from '../context/AuthContext';
 import "../App.scss"
 const NavBar = () => {
