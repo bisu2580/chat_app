@@ -1,5 +1,5 @@
-import SideBar from "./SideBar";
 import Chat from "./Chat";
+import SideBar from "./SideBar";
 const Home=()=>{
     return(
         <div className="home">

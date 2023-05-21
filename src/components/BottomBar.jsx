@@ -3,11 +3,10 @@ import { auth } from "../firebase";
 import { signOut } from "firebase/auth";
 import { AuthContext } from "../context/AuthContext";
 import "../App.scss";
-const NavBar = () => {
+const BottomBar = () => {
 	const { currentUser } = useContext(AuthContext);
 	return (
-		<div className="navBar">
-			<span className="logo">Chat App</span>
+		<div className="bottomBar">
 			<div className="user">
 				<img src={currentUser.photoURL} alt="" height="24px" width="24px" />
 				<span>{currentUser.displayName}</span>
@@ -16,4 +15,4 @@ const NavBar = () => {
 		</div>
 	);
 };
-export default NavBar;
+export default BottomBar;
