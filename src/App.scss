@@ -272,6 +272,7 @@ form p {
 				:hover {
 					color: #2f2d52;
 				}
+
 			}
 			.sideBar-responsive {
 				background-color: #3e3c61;
@@ -301,6 +302,11 @@ form p {
 				&::-webkit-scrollbar {
 					display: none;
 				}
+			}
+		}
+		.disp-name{
+			@include tablet{
+				margin-left: -8rem;
 			}
 		}
 		.chatIcons {

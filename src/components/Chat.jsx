@@ -3,10 +3,12 @@ import more from "../images/more.png";
 import add from "../images/add.png";
 import Messages from "./Messages";
 import Input from "./Input";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { AuthContext } from "../context/AuthContext";
 import { useContext, useState } from "react";
 import { ChatContext } from "../context/ChatContext";
 import SideBar from "./SideBarResponsive";
+
 const Chat = () => {
 	const { data } = useContext(ChatContext);
 	const { currentUser } = useContext(AuthContext);
@@ -14,13 +16,13 @@ const Chat = () => {
 	return (
 		<div className="chat">
 			<div className="chatInfo">
-				<div className="toggle" onClick={()=>setIsNavOpen(!isNavOpen)}>
+				<div className="toggle" onClick={() => setIsNavOpen(!isNavOpen)}>
 					<button
 						className="sidebar-toggle"
 						onClick={() => setIsNavOpen(!isNavOpen)}
 					>
-						<span class="material-symbols-outlined">
-							{isNavOpen ? "toggle_on" : "toggle_off"}
+						<span>
+							{isNavOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
 						</span>
 					</button>
 					<div
@@ -31,7 +33,7 @@ const Chat = () => {
 						<SideBar />
 					</div>
 				</div>
-				<span>
+				<span className="disp-name">
 					{data.user?.displayName === currentUser.displayName
 						? currentUser.displayName + "(me)"
 						: data.user?.displayName}
